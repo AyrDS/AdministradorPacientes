@@ -6,13 +6,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/f64a2be8d7.js" crossorigin="anonymous"></script>
-    <title>Turno médico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Administrador de pacientes</title>
 </head>
 
-<body>
-    <header>
-        <h1>Sacá tu turno médico</h1>
+<body class="container">
+    <header class="text-center text-white pt-5 pb-5">
+        <h1>Administrador de pacientes</h1>
     </header>
+
+    <main>
+        <div class="row rows-cols-1 row-cols-md-2 contenedor">
+            <div class="col">
+                <form id="nuevo-turno">
+                    <legend class="mb-4 fw-bold">Datos del Paciente</legend>
+                    <div class="form-group row mb-sm-4">
+                        <label for="nombre" class="col-sm-4 col-lg-4 col-form-label">Nombre del paciente</label>
+                        <div class="col-sm-8 col-lg-8">
+                            <input type="text" id="nombre" class="form-control" name="nombre">
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-sm-4">
+                        <label for="telefono" class="col-sm-4 col-lg-4 col-form-label">Teléfono</label>
+                        <div class="col-sm-8 col-lg-8">
+                            <input type="number" id="telefono" class="form-control" name="telefono">
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-sm-4">
+                        <label for="fecha" class="col-sm-4 col-lg-4 col-form-label">Fecha</label>
+                        <div class="col-sm-8 col-lg-8">
+                            <input type="date" id="fecha" class="form-control" name="fecha">
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-sm-4">
+                        <label for="hora" class="col-sm-4 col-lg-4 col-form-label">Hora</label>
+                        <div class="col-sm-8 col-lg-8">
+                            <input type="time" id="hora" class="form-control" name="hora">
+                        </div>
+                    </div>
+
+                    <div class="form-group row mb-sm-4">
+                        <label for="sintomas" class="col-sm-4 col-lg-4 col-form-label">Sintomas</label>
+                        <div class="col-sm-8 col-lg-8">
+                            <textarea name="sintomas" id="sintomas" cols="30" rows="5" class="form-control" name="sintomas"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-success w-100 d-block fw-bold mt-3">Crear turno</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="col mt-4 mt-md-0" id="listaTurnosContenedor">
+                <h2 class="text-center tituloTurnos">No hay turnos reservados</h2>
+                <ul id="turnos" class="list-group lista-turnos"></ul>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
 </body>
 
 </html>

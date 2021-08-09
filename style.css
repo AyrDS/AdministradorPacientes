@@ -1,0 +1,29 @@
+body {
+    background-color: #4158D0;
+    background-image: linear-gradient(180deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    min-height: 100vh;
+}
+
+main {
+    background-color: white;
+    padding: 30px;
+    border-radius: 20px;
+}
+
+.lista-turnos .card {
+    box-shadow: 42px 43px 29px -28px rgba(0,0,0,0.76);
+-webkit-box-shadow: 42px 43px 29px -28px rgba(0,0,0,0.76);
+-moz-box-shadow: 42px 43px 29px -28px rgba(0,0,0,0.76);
+}
+
+/* .lista-turnos .card button{
+    width: 125px;
+} */
+
+.lista-turnos .card:first-child {
+    margin-top: 10px;
+}
+
+.lista-turnos div p {
+    margin: 0;
+}
