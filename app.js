@@ -51,7 +51,6 @@ class UI {
 
     mostrarTurnos() {
         this.limpiarHTML();
-        console.log(turnos);
 
         //Leer contenido de la base de datos
         const objectStore = DB.transaction("turnos").objectStore("turnos");
@@ -257,14 +256,13 @@ function reinicarObjeto() {
 }
 
 function eliminarTurno(id) {
-    //Eliminar turno
     const transaction = DB.transaction(["turnos"], "readwrite");
     const objectStore = transaction.objectStore("turnos");
 
+    //Eliminar turno
     objectStore.delete(id);
 
     transaction.oncomplete = () => {
-
         //Mostrar mensaje
         ui.mostrarAlerta("El turno se eliminó correctamente");
 
@@ -328,7 +326,5 @@ function crearDB() {
         objectStore.createIndex("hora", "hora", { unique: false });
         objectStore.createIndex("sintomas", "sintomas", { unique: false });
         objectStore.createIndex("id", "id", { unique: true });
-
-        console.log("db creada");
     }
 }
